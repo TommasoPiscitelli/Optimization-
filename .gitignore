@@ -22,7 +22,6 @@ Thumbs.db
 
 # Data and results
 data/
-results/
 
 # Gurobi / logs
 *.log
