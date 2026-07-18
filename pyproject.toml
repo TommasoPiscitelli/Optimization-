@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lad-sfsod"
+version = "0.1.0"
+description = "MILP models for simultaneous feature selection and outlier detection under l1 norm"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "gurobipy>=10.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
