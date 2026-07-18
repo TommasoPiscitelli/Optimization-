@@ -8,21 +8,10 @@ M. Barbato, A. Ceselli, "Mathematical programming for simultaneous feature selec
 
 ## Implemented models
 
-At the current stage, the project implements the disjunctive-based MILP formulation, referred to as formulation (D) in the paper.
+At the current stage, the project implements two MILP formulations from the paper:
 
-## Requirements
+- **Formulation (D)**: the disjunctive-based formulation. This is the main formulation used in the project and is expected to provide a stronger linear relaxation.
 
-The project uses Python and Gurobi through the `gurobipy` interface.
+- **Formulation (L)**: an alternative linear formulation based on auxiliary residual-correction variables. This model is included mainly for comparison with formulation (D), both in terms of solution quality and computational behavior.
 
-## Files
-
-- `test.py`: runs the implemented formulation on a small synthetic instance.
-- `scalability.py`: performs a simple scalability analysis over synthetic instances of increasing size.
-- `src/lad_sfsod/data.py`: synthetic instance generation.
-- `src/lad_sfsod/model_d.py`: implementation of formulation (D).
-
-## How to run
-
-```bash
-python test.py
-python scalability.py
+Both formulations are tested on the synthetic instances provided by the original authors, with the aim of comparing their performance under different values of the feature-selection budget and the outlier-detection budget.

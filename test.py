@@ -16,8 +16,16 @@ Default small instance:
     d0 values = 5, 7, 9
     k0 ratios = 0.10, 0.15, 0.20
 
+
 Example:
-    python test.py --data-dir data/raw/synthetic --time-limit 60
+    python test.py \
+        --formulation L \
+        --n-small 30 \
+        --p-small 20 \
+        --d0-values 5 \
+        --k0-ratios 0.10 \
+        --time-limit 10 \
+        --output-csv results/test_small_formulation_L.csv
 """
 
 import argparse

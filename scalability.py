@@ -14,9 +14,15 @@ Default experiment:
 
 Example:
     python scalability.py \
+        --formulation D \
         --data-dir data/raw/synthetic \
-        --output-csv results/scalability_formulation_D_vertical.csv \
-        --time-limit 300 \
+        --output-csv results/smoke_scalability_D.csv \
+        --corruption-scheme vertical_outliers \
+        --n-samples-values 100 \
+        --max-replicates-per-size 1 \
+        --d0-values 5 \
+        --k0-ratios 0.10 \
+        --time-limit 10 \
         --mip-gap 1e-4
 """
 
@@ -68,7 +74,7 @@ CSV_COLUMNS = [
 
 
 
-def parse_dat_filename(path: Path) -> dict[str, Any]:
+def parse_dat_filename(path: Path) -> dict:
     """
     Parses file names like:
         test150322_100_50_01_2_0_5_-10_1.dat
@@ -475,7 +481,7 @@ def main() -> None:
                         output_flag=args.output_flag,
                     )
 
-                append_csv_row(args.output_csv, row)
+                append_csv_row(args.output_csv, row, CSV_COLUMNS)
 
                 executed += 1
 
