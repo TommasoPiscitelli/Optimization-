@@ -31,7 +31,8 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# Keep only vertical_outliers dataset
-data/raw/synthetic/*
-!data/raw/synthetic/vertical_outliers/
-!data/raw/synthetic/vertical_outliers/**
+
+# Data policy: track only vertical_outliers
+data/*
+!data/vertical_outliers/
+!data/vertical_outliers/**
