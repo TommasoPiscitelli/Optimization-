@@ -21,7 +21,6 @@ Thumbs.db
 *:Zone.Identifier
 
 # Data and results
-data/
 
 # Gurobi / logs
 *.log
@@ -31,3 +30,8 @@ data/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Keep only vertical_outliers dataset
+data/raw/synthetic/*
+!data/raw/synthetic/vertical_outliers/
+!data/raw/synthetic/vertical_outliers/**
